@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="actionBarSize">50dp</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- login theme. -->
+    <style name="LoginTheme" parent="Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@android:color/darker_gray</item>
+    </style>
+
+    <!--color theme-->
+    <style name="RedTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="BlueTheme">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/blue</item>
+    </style>
+
+    <style name="GreenTheme">
+        <item name="colorPrimary">@color/greenSea</item>
+        <item name="colorPrimaryDark">@color/greenSea</item>
+        <item name="colorAccent">@color/greenSea</item>
+    </style>
+
+    <!-- ratingbar theme -->
+    <style name="ZRatingBar" parent="Theme.AppCompat.Light">
+        <!-- 选中的颜色 -->
+        <item name="colorControlActivated">@android:color/black</item>
+    </style>
+
+</resources>

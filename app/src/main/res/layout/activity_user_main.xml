@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.zhuang.badfilm.user.SingleUser" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/portrait"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:onClick="checkLogin"
+                fresco:imageURI="@{SingleUser.instance.avatar}"
+                fresco:placeholderImage="@drawable/ic_portrait_white"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:roundAsCircle="true"
+                fresco:roundingBorderColor="@android:color/white"
+                fresco:roundingBorderWidth="2dp" />
+
+            <TextView
+                android:text='@{SingleUser.instance.name!=null?SingleUser.instance.name:"点击头像登录"}'
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/portrait"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/portrait"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/portrait"
+                android:layout_marginBottom="3dp"
+                android:layout_toRightOf="@+id/portrait"
+                android:text="粉丝：0    关注：0"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:paddingBottom="16dp"
+            android:paddingLeft="60dp"
+            android:paddingTop="16dp"
+            android:text="我的消息"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/text1"
+            app:layout_constraintLeft_toLeftOf="@+id/text1"
+            app:layout_constraintTop_toTopOf="@+id/text1"
+            app:srcCompat="@drawable/ic_message" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/text1" />
+
+        <TextView
+            android:onClick="selectTheme"
+            android:id="@+id/text2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:paddingBottom="16dp"
+            android:paddingLeft="70dp"
+            android:paddingTop="16dp"
+            android:text="主题选择"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/text2"
+            app:layout_constraintLeft_toLeftOf="@+id/text2"
+            app:layout_constraintTop_toTopOf="@+id/text2"
+            app:srcCompat="@drawable/ic_theme" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/text2" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingBottom="16dp"
+            android:paddingLeft="70dp"
+            android:paddingTop="16dp"
+            android:text="系统设置"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/text3"
+            app:layout_constraintLeft_toLeftOf="@+id/text3"
+            app:layout_constraintTop_toTopOf="@+id/text3"
+            app:srcCompat="@drawable/ic_setting" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/text3" />
+
+        <TextView
+            android:onClick="loginOut"
+            android:id="@+id/text4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/white"
+            android:paddingBottom="16dp"
+            android:paddingLeft="70dp"
+            android:paddingTop="16dp"
+            android:text="退出登录"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/text4"
+            app:layout_constraintLeft_toLeftOf="@+id/text4"
+            app:layout_constraintTop_toTopOf="@+id/text4"
+            app:srcCompat="@drawable/ic_exit" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/text4" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text4" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

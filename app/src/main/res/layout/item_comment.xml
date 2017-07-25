@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="comment"
+            type="com.zhuang.badfilm.model.Comment" />
+
+        <import type="com.zhuang.badfilm.user.SingleUser" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            fresco:imageURI="@{comment.avatar}"
+            fresco:placeholderImage="@drawable/ic_portrait_gray"
+            fresco:placeholderImageScaleType="fitCenter"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/avatar"
+            android:text="@{comment.name}"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.AppCompatRatingBar
+            android:id="@+id/star"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/name"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/name"
+            android:rating="@{comment.starFloat}"
+            android:theme="@style/ZRatingBar" />
+
+        <TextView
+            android:layout_marginRight="10dp"
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/avatar"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@{comment.content}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:layout_toRightOf="@+id/avatar"
+            android:text="@{comment.time}" />
+
+        <com.zhuang.badfilm.view.LikeButton
+            android:id="@+id/like"
+            android:likeCountText="@{comment.likeCount}"
+            android:hasLike = "@{comment.hasLike}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/content"
+            android:layout_marginRight="18dp"
+            android:text="删除"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="@{comment.uid.equals(SingleUser.getInstance().uid) ? View.VISIBLE : View.GONE}" />
+
+    </RelativeLayout>
+</layout>

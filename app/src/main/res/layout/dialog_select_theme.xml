@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/red"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/redCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/red"
+        android:layout_alignTop="@+id/red"
+        android:theme="@style/ZRatingBar" />
+
+    <TextView
+        android:id="@+id/blue"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/red"
+        android:background="@color/blue" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/blueCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/blue"
+        android:layout_alignTop="@+id/blue"
+        android:theme="@style/ZRatingBar" />
+
+    <TextView
+        android:id="@+id/greenSea"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/blue"
+        android:background="@color/greenSea" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/greenSeaCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/greenSea"
+        android:layout_alignTop="@+id/greenSea"
+        android:theme="@style/ZRatingBar" />
+
+</RelativeLayout>
