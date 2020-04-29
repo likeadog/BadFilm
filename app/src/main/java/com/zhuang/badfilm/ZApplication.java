@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ZApplication extends Application {
 
-    //小米推送
+    //小米推送 
     private static final String APP_ID = "2882303761517597678";
     private static final String APP_KEY = "5221759794678";
 
